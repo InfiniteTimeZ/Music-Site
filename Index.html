@@ -13,19 +13,73 @@
             <div class="musicPlayer">
                 <img src="Imgs/msi.png" alt="Album Cover" class="songImg">
                 <h2>3's</h2>
-                <P>Mindless Self Indulgence</P>
-                <audio controls>
-                    <source src="Audios/Mindless Self Indulgence3S.mp3.mp3" type="audio/mpeg">
+                <p>Mindless Self Indulgence</p> 
+                <audio id="song"> 
+                    <source src="Audios/Mindless Self Indulgence3S.mp3" type="audio/mpeg">
                 </audio>
-                <input type="range" value="0" id="progress">
-                
-                </div>
-                <div class="playIcon">
-                    <img class="plyImg" id="previous" src="Imgs/previous.png">
-                    <img class="plyImg" id="play" src="Imgs/play.png">
-                    <img class="plyImg" id="next" src="Imgs/next-button.png">
+                <input type="range" value="0" id="progress"> 
+            </div>
+            <div class="playIcon">
+                <button id="previous"><img class="plyImg" src="Imgs/previous.png"></button>
+                <button id="playPause"><img class="plyImg" id="play" src="Imgs/play.png"></button>
+                <button id="next"><img class="plyImg" src="Imgs/next-button.png"></button>
             </div>
         </div>
     </div>
+
+    <script>
+        let progress = document.getElementById('progress');
+        let song = document.getElementById('song');
+        let ctrlIcon = document.getElementById('play');
+        let playPauseBtn = document.getElementById('playPause'); 
+        let isDragging = false; 
+
+        song.onloadedmetadata = function() {
+    progress.max = song.duration;
+}
+
+// Toggle play/pause and update the icon
+playPauseBtn.addEventListener('click', function() {
+    if (song.paused) {
+        song.play();
+        ctrlIcon.src = 'Imgs/pause.png';  // Switch to pause icon
+    } else {
+        song.pause();
+        ctrlIcon.src = 'Imgs/play.png';  // Switch to play icon
+    }
+});
+
+// Update progress bar as the song plays, only if not dragging
+song.addEventListener('timeupdate', function() {
+    if (!isDragging) {
+        progress.value = song.currentTime;
+    }
+});
+
+// Allow user to seek within the track when dragging the slider
+progress.addEventListener('input', function() {
+    song.currentTime = progress.value;
+});
+
+// Track if the user is dragging the slider
+progress.addEventListener('mousedown', function() {
+    isDragging = true;
+});
+
+progress.addEventListener('mouseup', function() {
+    isDragging = false;
+    song.currentTime = progress.value;  // Ensure song time updates after dragging ends
+});
+
+// Optional: Immediate feedback during dragging (works for some browsers)
+progress.addEventListener('mousemove', function(e) {
+    if (isDragging) {
+        let rect = progress.getBoundingClientRect();
+        let percent = (e.clientX - rect.left) / rect.width;
+        song.currentTime = percent * song.duration;
+    }
+});
+        
+    </script>
 </body>
 </html>

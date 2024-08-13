@@ -32,11 +32,11 @@
     padding-bottom: 5px;
     width: 100%;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     
 }
 .playIcon{
-    margin: 0;
+    margin: 10px 0;
     display: flex;
     align-content: space-between;
     width: 100%;
@@ -65,9 +65,9 @@
       
  }
  .plyImg{
-    padding-top: 50px;
     height: 100%;   
     width: 50px;   
+    margin-top: 10px;
  }
  .musicPlayer h2{
     padding-top: 5px;
@@ -79,7 +79,8 @@
     background: pink;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     
 
  }
@@ -92,3 +93,19 @@ border-radius: 50%;
 border:8px solid #fff;
 box-shadow: 0 5px 5px black;
  }
+.playIcon button{
+    margin-top: 35px;
+    border: none;
+    border-radius: 40%;
+    height: 50px;
+}
+.playIcon button:hover{
+    cursor:grab
+}
+#play{
+    width: 50px;
+    height: 50px;
+}
+.musicPlayer p{
+    margin-top: 5px;
+}
