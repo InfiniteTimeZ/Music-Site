@@ -11,6 +11,7 @@
     display: flex;
     justify-content:  center;
     align-items: center;
+    flex-direction: column;
 }
 .musicApp{
      background: #f1ebeb;
@@ -81,8 +82,6 @@
     cursor: pointer;
     margin-top: 20px;
     margin-bottom: 10px;
-    
-
  }
  #progress::-webkit-slider-thumb{
 -webkit-appearance: none;
@@ -108,4 +107,27 @@ box-shadow: 0 5px 5px black;
 }
 .musicPlayer p{
     margin-top: 5px;
+}
+.songAdd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #f1ebeb;
+    height: 80px;
+    max-width: 300px;
+    width:100%;
+    margin-top: 10px;
+    border: black solid;
+    border-radius: 10px;
+    padding: 10px 0;
+
+}
+.songAdd h1{
+    color:#999191;
+
+    font-size: 18px;
+}
+.songAdd input{
+    
 }
