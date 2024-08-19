@@ -9,7 +9,6 @@ let songTitle = document.querySelector('.musicPlayer h2');
 let songArtist = document.querySelector('.musicPlayer p');
 let songImg = document.querySelector('.songImg');
 
-// Playlist Array: Add your songs here
 const playlist = [
     {
         src: 'Audios/ss.mp3',
@@ -35,7 +34,7 @@ let currentSongIndex = 0;
 
 song.onloadedmetadata = function() {
     progress.max = song.duration;
-}
+};
 
 playPauseBtn.addEventListener('click', function() {
     if (song.paused) {
@@ -74,7 +73,6 @@ progress.addEventListener('mousemove', function(e) {
     }
 });
 
-// Load the initial song
 function loadSong(index) {
     song.src = playlist[index].src;
     songTitle.textContent = playlist[index].title;
@@ -84,21 +82,19 @@ function loadSong(index) {
     song.load();  
 }
 
-// Play the previous song
 previousBtn.addEventListener('click', function() {
     currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
     loadSong(currentSongIndex);
     song.play();
-    ctrlIcon.src = 'Imgs/pause.png'; // Switch to pause icon
+    ctrlIcon.src = 'Imgs/pause.png'; 
 });
 
-// Play the next song
 nextBtn.addEventListener('click', function() {
     currentSongIndex = (currentSongIndex + 1) % playlist.length;
     loadSong(currentSongIndex);
     song.play();
-    ctrlIcon.src = 'Imgs/pause.png'; // Switch to pause icon
+    ctrlIcon.src = 'Imgs/pause.png'; 
 });
 
-
+// Load the first song when the page loads
 loadSong(currentSongIndex);

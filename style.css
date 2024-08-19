@@ -3,10 +3,11 @@
     padding:0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
+    
 }
 .container{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: linear-gradient(140deg, #f07df0, #8d0606);
     display: flex;
     justify-content:  center;
@@ -16,7 +17,7 @@
 .musicApp{
      background: #f1ebeb;
     width: 400px;
-    height: 600px;
+    height: 60%;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -114,20 +115,66 @@ box-shadow: 0 5px 5px black;
     align-items: center;
     flex-direction: column;
     background: #f1ebeb;
-    height: 80px;
+    height: 40%;
     max-width: 300px;
     width:100%;
     margin-top: 10px;
     border: black solid;
     border-radius: 10px;
-    padding: 10px 0;
+    padding: 10px 5px;
+    margin-bottom: 10px;
 
 }
 .songAdd h1{
     color:#999191;
-
     font-size: 18px;
 }
-.songAdd input{
+.songAdd input[type=text]{
+    background: #f1ebeb;
+    border: none;
+    border-bottom: gray solid 1px;
+    border-radius: 5px;
+}
+.resetS{
+    padding:10px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
     
+}
+#reset{
+margin-right: 5px;
+background: #999191;
+border-radius: 10px;
+border: solid #d3d0d0;
+padding: 2px 10px;
+}
+#submit{
+    margin-left: 5px;
+    background: #999191;
+    border-radius: 10px;
+    border: solid #d3d0d0;
+    padding: 2px 10px;
+}
+#music::-webkit-file-upload-button{
+    background: #999191;
+    border-radius: 10px;
+    border: solid #d3d0d0;
+
+}
+#image::-webkit-file-upload-button{
+    background: #999191;
+    border-radius: 10px;
+    border: solid #d3d0d0;
+}
+#music{
+    margin:2px 0;
+}
+#reset:active{
+    background-color:rgb(252, 74, 74);
+
+}
+#submit:active{
+    background-color: #20c420;
 }

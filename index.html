@@ -26,8 +26,18 @@
             </div>
         </div>
         <div class="songAdd">
-            <h1>Add Song</h1>
-            <input type="file">
+            <h1>Add Song & Info</h1>
+            <form>
+                <p>Song Name: <input type="text" required ></p>
+                <p>Artist Name: <input type="text" required></p>
+                <input id='music' type="file" required>
+                <input id="image" type="file" required>
+                <div class="resetS">
+                    <button type="reset" id="reset">Reset</button>
+                    <button type="submit" id="submit">Submit</button>
+                </div>
+                
+            </form>
         </div>
     </div>
     <script src="script.js"></script>
